@@ -1,0 +1,64 @@
+[System]
+Name='S2'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=2
+NumRules=10
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='position'
+Range=[0 100]
+NumMFs=5
+MF1='1':'trimf',[20 37 45]
+MF2='2':'trimf',[43 45 47]
+MF3='4':'trimf',[53 55 57]
+MF4='5':'trimf',[55 63 80]
+MF5='3':'trimf',[45 50 55]
+
+[Input2]
+Name='phi'
+Range=[-180 180]
+NumMFs=7
+MF1='B1':'trimf',[-180 -132 -80.16]
+MF2='B2':'trimf',[-97.44 -66.72 -36.96]
+MF3='B3':'trimf',[-54.24 -28.32 -2.4]
+MF4='B4':'trimf',[-19.68 -2.4 14.88]
+MF5='B5':'trimf',[-2.4 23.52 49.44]
+MF6='B6':'trimf',[32.16 61.92 92.64]
+MF7='B7':'trimf',[75.36 127.2 175.2]
+
+[Output1]
+Name='theta'
+Range=[-30 30]
+NumMFs=5
+MF1='C1':'trimf',[-45 -30 -12.4603174603175]
+MF2='C2':'trimf',[-12 -6 0]
+MF3='C3':'trimf',[-5.002 0 5.002]
+MF4='C4':'trimf',[0 6 12]
+MF5='C5':'trimf',[12.6190476190476 30 45]
+
+[Output2]
+Name='state'
+Range=[0 2]
+NumMFs=3
+MF1='0':'trimf',[-0.705 0 0.2]
+MF2='1':'trimf',[0.8 1 1.2]
+MF3='2':'trimf',[1.8 2 2.8]
+
+[Rules]
+4 4, 5 2 (1) : 1
+3 5, 5 2 (1) : 1
+3 6, 3 2 (1) : 1
+5 6, 2 2 (1) : 1
+2 6, 1 2 (1) : 1
+2 5, 2 2 (1) : 1
+2 4, 3 2 (1) : 1
+1 6, 1 2 (1) : 1
+1 5, 2 2 (1) : 1
+1 4, 3 3 (1) : 1

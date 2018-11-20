@@ -1,0 +1,49 @@
+[System]
+Name='S3'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=2
+NumRules=5
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='X'
+Range=[0 100]
+NumMFs=2
+MF1='Before':'trapmf',[-35.7 -3.7 45 55]
+MF2='After':'trapmf',[45 55 111 143]
+
+[Input2]
+Name='Vel'
+Range=[0 2]
+NumMFs=3
+MF1='S':'trimf',[-1.6 0 0.1365]
+MF2='M':'trimf',[0.02667 0.09807 0.1929]
+MF3='F':'trapmf',[0.098 0.208 2.045 2.06]
+
+[Output1]
+Name='Vel2'
+Range=[0 2]
+NumMFs=3
+MF1='S':'trimf',[-0.8 0 0.06825]
+MF2='M':'trimf',[0.02667 0.09807 0.1929]
+MF3='F':'trapmf',[0.098 0.208 2.045 2.06]
+
+[Output2]
+Name='State'
+Range=[0 1]
+NumMFs=2
+MF1='0':'trimf',[-0.8 0 0.2]
+MF2='1':'trimf',[0.8 1 1.2]
+
+[Rules]
+1 1, 2 1 (1) : 1
+1 2, 3 1 (1) : 1
+2 3, 2 1 (1) : 1
+2 2, 1 1 (1) : 1
+2 1, 1 2 (1) : 1
