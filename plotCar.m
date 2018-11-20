@@ -1,5 +1,5 @@
-x = 30;
-y = 30;
+x = 10;
+y = 20;
 fi = 0.0;
 theta = 1;
 init(x, y);
@@ -13,8 +13,8 @@ end
 function newCoordinates = calculateStep(curr_x, curr_y, curr_fi, theta)
   
   new_fi = curr_fi + theta;
-  new_x = curr_x + 2*cos(new_fi);
-  new_y = curr_y + 2*sin(new_fi);
+  new_x = curr_x + 2*cos(new_fi*pi/180);
+  new_y = curr_y + 2*sin(new_fi*pi/180);
   
   newCoordinates = [new_x, new_y, new_fi];
 end
