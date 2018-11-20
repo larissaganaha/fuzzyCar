@@ -35,15 +35,15 @@ MF7='B7':'trimf',[171 225 275]
 
 [Output1]
 Name='tetha'
-Range=[-30 30]
+Range=[-15 15]
 NumMFs=7
-MF1='C1':'trimf',[-45 -30 -15]
-MF2='C2':'trimf',[-25 -15 -5]
-MF3='C3':'trimf',[-12 -6 0]
-MF4='C4':'trimf',[-5 0 5]
-MF5='C5':'trimf',[0 6 12]
-MF6='C6':'trimf',[5 15 25]
-MF7='C7':'trimf',[15 30 45]
+MF1='C1':'trimf',[-22.5 -15 -7.5]
+MF2='C2':'trimf',[-12.5 -7.5 -2.501]
+MF3='C3':'trimf',[-6 -3 0]
+MF4='C4':'trimf',[-2.501 0 2.501]
+MF5='C5':'trimf',[0 3 6]
+MF6='C6':'trimf',[2.501 7.5 12.5]
+MF7='C7':'trimf',[7.5 15 22.5]
 
 [Rules]
 1 1, 5 (1) : 1
